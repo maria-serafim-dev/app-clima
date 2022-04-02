@@ -1,6 +1,7 @@
 package com.example.appclima.data
 
 import com.example.appclima.R
+import com.example.appclima.model.ClimaDia
 import com.example.appclima.model.ClimaHora
 
 class DataSource {
@@ -19,5 +20,15 @@ class DataSource {
         ClimaHora(10, R.drawable.ic_sun, 30),
         ClimaHora(11, R.drawable.ic_sun, 30),
         ClimaHora(12, R.drawable.ic_sun, 30),
+    )
+
+    val listaClimaDia = listOf<ClimaDia>(
+        ClimaDia("Segunda", R.drawable.ic_nuvem, 20, 30),
+        ClimaDia("Terça", R.drawable.ic_nuvem, 20, 30),
+        ClimaDia("Quarta", R.drawable.ic_nuvem, 20, 30),
+        ClimaDia("Quinta", R.drawable.ic_sun, 20, 30),
+        ClimaDia("Sexta", R.drawable.ic_sun, 20, 30),
+        ClimaDia("Sabado", R.drawable.ic_sun, 20, 30),
+        ClimaDia("Domingo", R.drawable.ic_sun, 20, 30),
     )
 }

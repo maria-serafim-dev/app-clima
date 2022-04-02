@@ -2,7 +2,7 @@
     <string name="app_name">AppClima</string>
     <string name="text_nome_cidade">Paracatu</string>
     <string name="text_temperatura_atual">29ºC</string>
-    <string name="text_temperatura_por_hora">%s º</string>
+    <string name="text_temperatura_por_hora">%sº</string>
     <string name="text_temperatura_min">29ºC</string>
     <string name="text_temperatura_max">33ºC</string>
     <string name="text_descricao">Céu Limpo</string>
