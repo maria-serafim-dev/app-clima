@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,391 +7,419 @@
     android:background="@color/azul"
     tools:context=".ui.MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-        <ImageView
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:alpha="0.5"
-            android:scaleType="centerCrop"
-            android:src="@drawable/clouds_g583db306d_1920"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tv_nome_cidade"
-            style="@style/TextAppearance.MaterialComponents.Headline4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/text_nome_cidade"
-            android:textColor="@color/white"
-            android:layout_marginTop="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/tv_temperatura_atual"
-            style="@style/TextAppearance.MaterialComponents.Headline2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/text_temperatura_atual"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/tv_nome_cidade"
-            app:layout_constraintStart_toStartOf="@id/tv_nome_cidade"
-            app:layout_constraintTop_toBottomOf="@id/tv_nome_cidade"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/tv_descricao"
-            style="@style/TextAppearance.MaterialComponents.Body1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/text_descricao"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/tv_temperatura_atual"
-            app:layout_constraintStart_toStartOf="@id/tv_temperatura_atual"
-            app:layout_constraintTop_toBottomOf="@id/tv_temperatura_atual"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/tv_max"
-            style="@style/TextAppearance.MaterialComponents.Body1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/text_maxima"
-            android:layout_marginEnd="10dp"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/tv_min"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_descricao"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <TextView
-            android:id="@+id/tv_min"
-            style="@style/TextAppearance.MaterialComponents.Body1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/text_minima"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tv_max"
-            app:layout_constraintTop_toBottomOf="@id/tv_descricao"
-            app:layout_constraintVertical_bias="0.0" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_horario"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="20dp"
-            android:backgroundTint="@color/azul_car"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_min"
-            app:layout_constraintVertical_bias="0.0">
-
-            <LinearLayout
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="10dp">
+                android:alpha="0.5"
+                android:scaleType="centerCrop"
+                android:src="@drawable/clouds_g583db306d_1920"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
-                <TextView
-                    style="@style/TextAppearance.MaterialComponents.Body2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center_vertical"
-                    android:text="@string/text_titutlo_previsao_descricao"
-                    android:textColor="@color/white" />
+            <TextView
+                android:id="@+id/tv_nome_cidade"
+                style="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/text_nome_cidade"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
+            <TextView
+                android:id="@+id/tv_temperatura_atual"
+                style="@style/TextAppearance.MaterialComponents.Headline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_temperatura_atual"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/tv_nome_cidade"
+                app:layout_constraintStart_toStartOf="@id/tv_nome_cidade"
+                app:layout_constraintTop_toBottomOf="@id/tv_nome_cidade"
+                app:layout_constraintVertical_bias="0.0" />
 
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_descricao"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_descricao"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/tv_temperatura_atual"
+                app:layout_constraintStart_toStartOf="@id/tv_temperatura_atual"
+                app:layout_constraintTop_toBottomOf="@id/tv_temperatura_atual"
+                app:layout_constraintVertical_bias="0.0" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_clima_por_hora"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    app:layoutManager="LinearLayoutManager"
-                    tools:listitem="@layout/item_clima_por_hora"/>
+            <TextView
+                android:id="@+id/tv_max"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="@string/text_maxima"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tv_min"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_descricao"
+                app:layout_constraintVertical_bias="0.0" />
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+            <TextView
+                android:id="@+id/tv_min"
+                style="@style/TextAppearance.MaterialComponents.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_minima"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_max"
+                app:layout_constraintTop_toBottomOf="@id/tv_descricao"
+                app:layout_constraintVertical_bias="0.0" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_dias"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="20dp"
-            android:backgroundTint="@color/azul_car"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_horario"
-            app:layout_constraintVertical_bias="0.0">
-
-
-            <LinearLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_horario"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingHorizontal="20dp"
-                android:paddingVertical="10dp">
-
-                <TextView
-                    style="@style/TextAppearance.MaterialComponents.Body1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:drawablePadding="10dp"
-                    android:gravity="center_vertical"
-                    android:text="@string/text_titutlo_previsao"
-                    android:textColor="@color/white"
-                    app:drawableStartCompat="@drawable/ic_calendario" />
-
-
-                <com.google.android.material.divider.MaterialDivider
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_clima_por_dia"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    app:layoutManager="LinearLayoutManager"
-                    tools:listitem="@layout/item_clima_por_dia" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-
-        <GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginVertical="20dp"
-            android:columnCount="2"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_dias"
-            app:layout_constraintVertical_bias="0.0">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="160dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/azul_car"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="10dp">
-
-                    <TextView
-                        style="@style/TextAppearance.MaterialComponents.Caption"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:drawablePadding="5dp"
-                        android:gravity="center_vertical"
-                        android:text="@string/text_titulo_umidade"
-                        android:textColor="@color/azul"
-                        app:drawableStartCompat="@drawable/ic_vento" />
-
-                    <TextView
-                        android:id="@+id/tv_umidade"
-                        style="@style/TextAppearance.MaterialComponents.Headline5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:drawablePadding="10dp"
-                        android:text="@string/text_valor_umidade"
-                        android:textColor="@color/white" />
-
-                    <TextView
-                        style="@style/TextAppearance.MaterialComponents.Caption"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:layout_weight="3"
-                        android:drawablePadding="10dp"
-                        android:gravity="bottom"
-                        android:text="@string/text_descricao_umidade"
-                        android:textColor="@color/white"
-                        android:textSize="11sp" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:layout_gravity="end">
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:backgroundTint="@color/azul_car"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_min"
+                app:layout_constraintVertical_bias="0.0">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:paddingHorizontal="10dp"
-                    android:background="@color/azul_car">
-
-                    <TextView
-                        style="@style/TextAppearance.MaterialComponents.Caption"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawablePadding="5dp"
-                        android:gravity="center_vertical"
-                        android:text="@string/text_titulo_sensacao"
-                        android:textColor="@color/azul"
-                        android:layout_weight="1"
-                        app:drawableStartCompat="@drawable/ic_termometro" />
-
-                    <TextView
-                        android:id="@+id/tv_sensacao"
-                        style="@style/TextAppearance.MaterialComponents.Headline5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:drawablePadding="10dp"
-                        android:text="@string/text_valor_sensacao"
-                        android:textColor="@color/white" />
-
-                    <TextView
-                        style="@style/TextAppearance.MaterialComponents.Caption"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:layout_weight="3"
-                        android:drawablePadding="10dp"
-                        android:gravity="bottom"
-                        android:textSize="11sp"
-                        android:text="@string/text_descricao_sensacao"
-                        android:textColor="@color/white" />
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:layout_marginTop="20dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="10dp"
-                    android:background="@color/azul_car">
-
-                    <TextView
-                        style="@style/TextAppearance.MaterialComponents.Caption"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawablePadding="5dp"
-                        android:gravity="center_vertical"
-                        android:text="@string/text_titulo_chuva"
-                        android:textColor="@color/azul"
-                        android:layout_weight="1"
-                        app:drawableStartCompat="@drawable/ic_gota" />
-
-                    <TextView
-                        android:id="@+id/tv_chuva"
-                        style="@style/TextAppearance.MaterialComponents.Headline5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:drawablePadding="10dp"
-                        android:text="@string/text_valor_chuva_numero"
-                        android:textColor="@color/white" />
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp">
 
                     <TextView
                         style="@style/TextAppearance.MaterialComponents.Body2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawablePadding="10dp"
-                        android:text="@string/text_valor_chuva"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/text_titutlo_previsao_descricao"
                         android:textColor="@color/white" />
 
-                    <TextView
-                        style="@style/TextAppearance.MaterialComponents.Caption"
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_clima_por_hora"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:layout_weight="3"
-                        android:drawablePadding="10dp"
-                        android:gravity="bottom"
-                        android:textSize="11sp"
-                        android:text="@string/text_descricao_chuva"
-                        android:textColor="@color/white" />
+                        android:orientation="horizontal"
+                        app:layoutManager="LinearLayoutManager"
+                        tools:listitem="@layout/item_clima_por_hora"/>
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:layout_width="160dp"
-                android:layout_height="160dp"
-                android:layout_gravity="end"
-                android:layout_marginTop="20dp">
+                android:id="@+id/card_dias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:backgroundTint="@color/azul_car"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_horario"
+                app:layout_constraintVertical_bias="0.0">
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:paddingHorizontal="10dp"
-                    android:background="@color/azul_car">
+                    android:paddingHorizontal="20dp"
+                    android:paddingVertical="10dp">
 
                     <TextView
-                        style="@style/TextAppearance.MaterialComponents.Caption"
+                        style="@style/TextAppearance.MaterialComponents.Body1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:drawablePadding="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:drawablePadding="10dp"
                         android:gravity="center_vertical"
-                        android:text="@string/text_titulo_visibilidade"
-                        android:textColor="@color/azul"
-                        android:layout_weight="1"
-                        app:drawableStartCompat="@drawable/ic_visibilidade" />
+                        android:text="@string/text_titutlo_previsao"
+                        android:textColor="@color/white"
+                        app:drawableStartCompat="@drawable/ic_calendario" />
 
-                    <TextView
-                        android:id="@+id/tv_visibilidade"
-                        style="@style/TextAppearance.MaterialComponents.Headline5"
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_clima_por_dia"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:drawablePadding="10dp"
-                        android:text="@string/text_valor_visibilidade"
-                        android:textColor="@color/white" />
+                        android:orientation="vertical"
+                        app:layoutManager="LinearLayoutManager"
+                        tools:listitem="@layout/item_clima_por_dia" />
 
-                    <TextView
-                        style="@style/TextAppearance.MaterialComponents.Caption"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:layout_weight="3"
-                        android:drawablePadding="10dp"
-                        android:gravity="bottom"
-                        android:textSize="11sp"
-                        android:text="@string/text_descricao_visibilidade"
-                        android:textColor="@color/white" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-        </GridLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+
+            <GridLayout
+                android:id="@+id/grid_informacoes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="20dp"
+                android:columnCount="2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_dias"
+                app:layout_constraintVertical_bias="0.0">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="160dp"
+                    android:layout_height="160dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/azul_car"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="10dp">
+
+                        <TextView
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="5dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/text_titulo_umidade"
+                            android:textColor="@color/azul"
+                            app:drawableStartCompat="@drawable/ic_vento" />
+
+                        <TextView
+                            android:id="@+id/tv_umidade"
+                            style="@style/TextAppearance.MaterialComponents.Headline5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:drawablePadding="10dp"
+                            android:text="@string/text_valor_umidade"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="3"
+                            android:drawablePadding="10dp"
+                            android:gravity="bottom"
+                            android:text="@string/text_descricao_umidade"
+                            android:textColor="@color/white"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="end">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/azul_car"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="10dp">
+
+                        <TextView
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="5dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/text_titulo_sensacao"
+                            android:textColor="@color/azul"
+                            app:drawableStartCompat="@drawable/ic_termometro" />
+
+                        <TextView
+                            android:id="@+id/tv_sensacao"
+                            style="@style/TextAppearance.MaterialComponents.Headline5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:drawablePadding="10dp"
+                            android:text="@string/text_valor_sensacao"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="3"
+                            android:drawablePadding="10dp"
+                            android:gravity="bottom"
+                            android:text="@string/text_descricao_sensacao"
+                            android:textColor="@color/white"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_marginTop="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/azul_car"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="10dp">
+
+                        <TextView
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="5dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/text_titulo_chuva"
+                            android:textColor="@color/azul"
+                            app:drawableStartCompat="@drawable/ic_gota" />
+
+                        <TextView
+                            android:id="@+id/tv_chuva"
+                            style="@style/TextAppearance.MaterialComponents.Headline5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="10dp"
+                            android:text="@string/text_valor_chuva_numero"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            style="@style/TextAppearance.MaterialComponents.Body2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="10dp"
+                            android:text="@string/text_valor_chuva"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="3"
+                            android:drawablePadding="10dp"
+                            android:gravity="bottom"
+                            android:text="@string/text_descricao_chuva"
+                            android:textColor="@color/white"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/azul_car"
+                        android:orientation="vertical"
+                        android:paddingHorizontal="10dp">
+
+                        <TextView
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:drawablePadding="5dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/text_titulo_visibilidade"
+                            android:textColor="@color/azul"
+                            app:drawableStartCompat="@drawable/ic_visibilidade" />
+
+                        <TextView
+                            android:id="@+id/tv_visibilidade"
+                            style="@style/TextAppearance.MaterialComponents.Headline5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:drawablePadding="10dp"
+                            android:text="@string/text_valor_visibilidade"
+                            android:textColor="@color/white" />
+
+                        <TextView
+                            style="@style/TextAppearance.MaterialComponents.Caption"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="3"
+                            android:drawablePadding="10dp"
+                            android:gravity="bottom"
+                            android:text="@string/text_descricao_visibilidade"
+                            android:textColor="@color/white"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/bottomAppBar"
+        style="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:menu="@menu/bottom_app_bar"
+        android:src="@drawable/ic_menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.0"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

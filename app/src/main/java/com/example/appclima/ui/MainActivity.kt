@@ -2,6 +2,7 @@ package com.example.appclima.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -9,6 +10,7 @@ import com.example.appclima.R
 import com.example.appclima.adapter.ClimaDiaAdapter
 import com.example.appclima.adapter.ClimaHoraAdapter
 import com.example.appclima.data.DataSource
+import com.google.android.material.bottomappbar.BottomAppBar
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         carregarRecycleClimaPorHora()
         carregarRecycleClimaPorDia()
         carregarDadosCidade()
+        carregarMenu()
     }
 
     private fun carregarRecycleClimaPorHora() {
@@ -58,6 +61,20 @@ class MainActivity : AppCompatActivity() {
             textChuva.text = resources.getString(R.string.text_valor_chuva_numero, chuvaUtlimasTresHoras.toString())
         }
 
+    }
+
+
+    private fun carregarMenu(){
+        val menu = findViewById<BottomAppBar>(R.id.bottomAppBar)
+        menu.setOnMenuItemClickListener {
+            when(it.itemId){
+                R.id.procurar -> {
+                    Log.i("Mensagem", "Menu ok")
+                    true
+                }
+                else -> false
+            }
+        }
     }
 
 }
