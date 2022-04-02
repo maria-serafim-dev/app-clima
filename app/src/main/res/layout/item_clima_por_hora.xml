@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_hora"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/text_hora"
+        android:textColor="@color/white" />
+
+    <ImageView
+        android:id="@+id/icone_tempo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_sun" />
+
+    <TextView
+        android:id="@+id/tv_temperatura_hora"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/text_temperatura_por_hora"
+        android:textColor="@color/white" />
+</LinearLayout>
