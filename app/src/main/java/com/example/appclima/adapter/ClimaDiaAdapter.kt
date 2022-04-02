@@ -9,7 +9,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appclima.R
 import com.example.appclima.model.ClimaDia
-import com.example.appclima.model.ClimaHora
 import com.google.android.material.slider.Slider
 
 class ClimaDiaAdapter (private val context: Context,
