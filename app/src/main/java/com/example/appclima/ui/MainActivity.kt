@@ -1,5 +1,6 @@
 package com.example.appclima.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -69,7 +70,8 @@ class MainActivity : AppCompatActivity() {
         menu.setOnMenuItemClickListener {
             when(it.itemId){
                 R.id.procurar -> {
-                    Log.i("Mensagem", "Menu ok")
+                     val intent = Intent(this, ConfigurarCidadesActivity::class.java)
+                    startActivity(intent)
                     true
                 }
                 else -> false

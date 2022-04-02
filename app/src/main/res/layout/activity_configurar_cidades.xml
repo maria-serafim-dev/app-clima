@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.ConfigurarCidadesActivity">
+
+    <TextView
+        android:id="@+id/tv_titulo_tempo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/text_titulo_tempo"
+        android:textColor="@color/black"
+        style="@style/TextAppearance.MaterialComponents.Headline5"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_horario_primeiro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        android:backgroundTint="@color/azul_car"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_titulo_tempo"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp">
+
+            <TextView
+                android:id="@+id/tv_nome_cidade"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/text_nome_cidade"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_temperatura_atual"
+                style="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="130dp"
+                android:layout_marginEnd="6dp"
+                android:text="@string/text_temperatura_atual"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/tv_min"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/tv_nome_cidade"
+                app:layout_constraintTop_toTopOf="@id/tv_nome_cidade"
+                app:layout_constraintVertical_bias="0.060000002" />
+
+            <TextView
+                android:id="@+id/tv_horario"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/text_horario"
+                app:layout_constraintTop_toBottomOf="@id/tv_nome_cidade"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/white" />
+
+
+            <TextView
+                android:id="@+id/tv_descricao"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_descricao"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_horario" />
+
+            <TextView
+                android:id="@+id/tv_max"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="120dp"
+                android:gravity="center_vertical"
+                android:text="@string/text_maxima"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@id/tv_descricao"
+                app:layout_constraintTop_toTopOf="@id/tv_descricao"
+                app:layout_constraintBottom_toBottomOf="@id/tv_descricao" />
+
+            <TextView
+                android:id="@+id/tv_min"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="30dp"
+                android:gravity="center_vertical"
+                android:text="@string/text_minima"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@id/tv_max"
+                app:layout_constraintTop_toTopOf="@id/tv_descricao"
+                app:layout_constraintBottom_toBottomOf="@id/tv_descricao"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_horario_segundo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        android:backgroundTint="@color/azul_car"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_horario_primeiro"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp">
+
+            <TextView
+                android:id="@+id/tv_nome_cidade_segundo"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/text_nome_cidade"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_temperatura_atual_segundo"
+                style="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="130dp"
+                android:layout_marginEnd="6dp"
+                android:text="@string/text_temperatura_atual"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/tv_min_segundo"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/tv_nome_cidade_segundo"
+                app:layout_constraintTop_toTopOf="@id/tv_nome_cidade_segundo"
+                app:layout_constraintVertical_bias="0.060000002" />
+
+            <TextView
+                android:id="@+id/tv_horario_segundo"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/text_horario"
+                app:layout_constraintTop_toBottomOf="@id/tv_nome_cidade_segundo"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/white" />
+
+
+            <TextView
+                android:id="@+id/tv_descricao_segundo"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_descricao"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_horario_segundo" />
+
+            <TextView
+                android:id="@+id/tv_max_segundo"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="120dp"
+                android:gravity="center_vertical"
+                android:text="@string/text_maxima"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@id/tv_descricao_segundo"
+                app:layout_constraintTop_toTopOf="@id/tv_descricao_segundo"
+                app:layout_constraintBottom_toBottomOf="@id/tv_descricao_segundo" />
+
+            <TextView
+                android:id="@+id/tv_min_segundo"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="30dp"
+                android:gravity="center_vertical"
+                android:text="@string/text_minima"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@id/tv_max_segundo"
+                app:layout_constraintTop_toTopOf="@id/tv_descricao_segundo"
+                app:layout_constraintBottom_toBottomOf="@id/tv_descricao_segundo"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_horario_terceiro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        android:backgroundTint="@color/azul_car"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_horario_segundo"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp">
+
+            <TextView
+                android:id="@+id/tv_nome_cidade_terceiro"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/text_nome_cidade"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_temperatura_atual_terceiro"
+                style="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="130dp"
+                android:layout_marginEnd="6dp"
+                android:text="@string/text_temperatura_atual"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/tv_min_terceiro"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/tv_nome_cidade_terceiro"
+                app:layout_constraintTop_toTopOf="@id/tv_nome_cidade_terceiro"
+                app:layout_constraintVertical_bias="0.060000002" />
+
+            <TextView
+                android:id="@+id/tv_horario_terceiro"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/text_horario"
+                app:layout_constraintTop_toBottomOf="@id/tv_nome_cidade_terceiro"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/white" />
+
+
+            <TextView
+                android:id="@+id/tv_descricao_terceiro"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_descricao"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_horario_terceiro" />
+
+            <TextView
+                android:id="@+id/tv_max_terceiro"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="120dp"
+                android:gravity="center_vertical"
+                android:text="@string/text_maxima"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@id/tv_descricao_terceiro"
+                app:layout_constraintTop_toTopOf="@id/tv_descricao_terceiro"
+                app:layout_constraintBottom_toBottomOf="@id/tv_descricao_terceiro" />
+
+            <TextView
+                android:id="@+id/tv_min_terceiro"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="30dp"
+                android:gravity="center_vertical"
+                android:text="@string/text_minima"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@id/tv_max_terceiro"
+                app:layout_constraintTop_toTopOf="@id/tv_descricao_terceiro"
+                app:layout_constraintBottom_toBottomOf="@id/tv_descricao_terceiro"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_horario_quarto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        android:backgroundTint="@color/azul_car"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_horario_terceiro"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp">
+
+            <TextView
+                android:id="@+id/tv_nome_cidade_quarto"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/text_nome_cidade"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_temperatura_atual_quarto"
+                style="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="130dp"
+                android:layout_marginEnd="6dp"
+                android:text="@string/text_temperatura_atual"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/tv_min_quarto"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/tv_nome_cidade_quarto"
+                app:layout_constraintTop_toTopOf="@id/tv_nome_cidade_quarto"
+                app:layout_constraintVertical_bias="0.060000002" />
+
+            <TextView
+                android:id="@+id/tv_horario_quarto"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/text_horario"
+                app:layout_constraintTop_toBottomOf="@id/tv_nome_cidade_quarto"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/white" />
+
+
+            <TextView
+                android:id="@+id/tv_descricao_quarto"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_descricao"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_horario_quarto" />
+
+            <TextView
+                android:id="@+id/tv_max_quarto"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="120dp"
+                android:gravity="center_vertical"
+                android:text="@string/text_maxima"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@id/tv_descricao_quarto"
+                app:layout_constraintTop_toTopOf="@id/tv_descricao_quarto"
+                app:layout_constraintBottom_toBottomOf="@id/tv_descricao_quarto" />
+
+            <TextView
+                android:id="@+id/tv_min_quarto"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="30dp"
+                android:gravity="center_vertical"
+                android:text="@string/text_minima"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@id/tv_max_quarto"
+                app:layout_constraintTop_toTopOf="@id/tv_descricao_quarto"
+                app:layout_constraintBottom_toBottomOf="@id/tv_descricao_quarto"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_horario_quinto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="20dp"
+        android:backgroundTint="@color/azul_car"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_horario_quarto"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="10dp">
+
+            <TextView
+                android:id="@+id/tv_nome_cidade_quinto"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/text_nome_cidade"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_temperatura_atual_quinto"
+                style="@style/TextAppearance.MaterialComponents.Headline4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="130dp"
+                android:layout_marginEnd="6dp"
+                android:text="@string/text_temperatura_atual"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="@id/tv_min_quinto"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/tv_nome_cidade_quinto"
+                app:layout_constraintTop_toTopOf="@id/tv_nome_cidade_quinto"
+                app:layout_constraintVertical_bias="0.060000002" />
+
+            <TextView
+                android:id="@+id/tv_horario_quinto"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="@string/text_horario"
+                app:layout_constraintTop_toBottomOf="@id/tv_nome_cidade_quinto"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/white" />
+
+
+            <TextView
+                android:id="@+id/tv_descricao_quinto"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_descricao"
+                android:textColor="@color/white"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_horario_quinto" />
+
+            <TextView
+                android:id="@+id/tv_max_quinto"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="120dp"
+                android:gravity="center_vertical"
+                android:text="@string/text_maxima"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@id/tv_descricao_quinto"
+                app:layout_constraintTop_toTopOf="@id/tv_descricao_quinto"
+                app:layout_constraintBottom_toBottomOf="@id/tv_descricao_quinto" />
+
+            <TextView
+                android:id="@+id/tv_min_quinto"
+                style="@style/TextAppearance.MaterialComponents.Body2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="30dp"
+                android:gravity="center_vertical"
+                android:text="@string/text_minima"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@id/tv_max_quinto"
+                app:layout_constraintTop_toTopOf="@id/tv_descricao_quinto"
+                app:layout_constraintBottom_toBottomOf="@id/tv_descricao_quinto"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,6 +30,8 @@
     <string name="text_titulo_visibilidade">Visibilidade</string>
     <string name="text_valor_visibilidade">%s km</string>
     <string name="text_descricao_visibilidade">Está perfeitamente limpo agora </string>
+    <string name="text_titulo_tempo">Tempo</string>
+    <string name="text_horario">19:50</string>
 
 
 </resources>
