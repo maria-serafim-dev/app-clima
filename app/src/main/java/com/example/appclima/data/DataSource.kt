@@ -1,6 +1,7 @@
 package com.example.appclima.data
 
 import com.example.appclima.R
+import com.example.appclima.model.ClimaCidade
 import com.example.appclima.model.ClimaDia
 import com.example.appclima.model.ClimaHora
 
@@ -31,4 +32,8 @@ class DataSource {
         ClimaDia("Sabado", R.drawable.ic_sun, 20, 30),
         ClimaDia("Domingo", R.drawable.ic_sun, 20, 30),
     )
+
+    val cidadeParacatu = ClimaCidade("Paracatu", 30, "Céu Limpo",
+        30, 30, 47, 29, 0, 16 )
+
 }
