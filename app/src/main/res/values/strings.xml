@@ -12,4 +12,24 @@
     <string name="text_titutlo_previsao_descricao">Previsão de consições limpas cerca de 23:00</string>
     <string name="text_hoje">Hoje</string>
     <string name="text_hora">01</string>
+
+
+    <string name="text_titulo_umidade">Umidade</string>
+    <string name="text_valor_umidade">60%</string>
+    <string name="text_descricao_umidade">O ponto de orvalho é de 21º agora </string>
+
+    <string name="text_titulo_sensacao">Sensação</string>
+    <string name="text_valor_sensacao">33º</string>
+    <string name="text_descricao_sensacao">A umidade está aumentando a sensação térmica </string>
+
+    <string name="text_titulo_chuva">Chuva</string>
+    <string name="text_valor_chuva_numero">0 mm</string>
+    <string name="text_valor_chuva"><small>nas últimas 24 horas</small> </string>
+    <string name="text_descricao_chuva">Próxima prevista: 1 mm sábado </string>
+
+    <string name="text_titulo_visibilidade">Visibilidade</string>
+    <string name="text_valor_visibilidade">16 km</string>
+    <string name="text_descricao_visibilidade">Está perfeitamente limpo agora </string>
+
+
 </resources>

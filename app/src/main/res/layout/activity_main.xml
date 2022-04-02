@@ -13,7 +13,7 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="800dp"
+            android:layout_height="match_parent"
             android:alpha="0.5"
             android:scaleType="centerCrop"
             android:src="@drawable/clouds_g583db306d_1920"
@@ -22,7 +22,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
-
 
         <TextView
             android:id="@+id/tv_nome_cidade"
@@ -90,7 +89,6 @@
             app:layout_constraintStart_toEndOf="@id/tv_max"
             app:layout_constraintTop_toBottomOf="@id/tv_descricao"
             app:layout_constraintVertical_bias="0.0" />
-
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_horario"
@@ -184,5 +182,212 @@
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="20dp"
+            android:columnCount="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_dias"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="160dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/azul_car"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="10dp">
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="5dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/text_titulo_umidade"
+                        android:textColor="@color/azul"
+                        app:drawableStartCompat="@drawable/ic_vento" />
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Headline5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:drawablePadding="10dp"
+
+                        android:text="@string/text_valor_umidade"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="3"
+                        android:drawablePadding="10dp"
+                        android:gravity="bottom"
+                        android:text="@string/text_descricao_umidade"
+                        android:textColor="@color/white"
+                        android:textSize="11sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="end">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="10dp"
+                    android:background="@color/azul_car">
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="5dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/text_titulo_sensacao"
+                        android:textColor="@color/azul"
+                        android:layout_weight="1"
+                        app:drawableStartCompat="@drawable/ic_termometro" />
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Headline5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:drawablePadding="10dp"
+                        android:text="@string/text_valor_sensacao"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="3"
+                        android:drawablePadding="10dp"
+                        android:gravity="bottom"
+                        android:textSize="11sp"
+                        android:text="@string/text_descricao_sensacao"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="10dp"
+                    android:background="@color/azul_car">
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="5dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/text_titulo_chuva"
+                        android:textColor="@color/azul"
+                        android:layout_weight="1"
+                        app:drawableStartCompat="@drawable/ic_gota" />
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Headline5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="10dp"
+                        android:text="@string/text_valor_chuva_numero"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Body2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="10dp"
+                        android:text="@string/text_valor_chuva"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="3"
+                        android:drawablePadding="10dp"
+                        android:gravity="bottom"
+                        android:textSize="11sp"
+                        android:text="@string/text_descricao_chuva"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="10dp"
+                    android:background="@color/azul_car">
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="5dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/text_titulo_visibilidade"
+                        android:textColor="@color/azul"
+                        android:layout_weight="1"
+                        app:drawableStartCompat="@drawable/ic_visibilidade" />
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Headline5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:drawablePadding="10dp"
+                        android:text="@string/text_valor_visibilidade"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Caption"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="3"
+                        android:drawablePadding="10dp"
+                        android:gravity="bottom"
+                        android:textSize="11sp"
+                        android:text="@string/text_descricao_visibilidade"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
