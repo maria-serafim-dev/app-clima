@@ -1,7 +1,9 @@
 package com.example.appclima.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.appclima.R
@@ -18,9 +20,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         carregarSlideCidades()
+        ouvinteProcurarCidade()
         //carregarRecycleClimaPorHora()
         //carregarRecycleClimaPorDia()
 
+    }
+
+    private fun ouvinteProcurarCidade() {
+        val imagemProcurar: ImageView = findViewById(R.id.img_procurar)
+        imagemProcurar.setOnClickListener {
+            val intent = Intent( this, ConfigurarCidadesActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun carregarRecycleClimaPorHora() {

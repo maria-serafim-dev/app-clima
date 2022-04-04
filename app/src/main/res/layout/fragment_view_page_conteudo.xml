@@ -109,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginVertical="20dp"
-                android:backgroundTint="@color/azul_car"
+                android:backgroundTint="@color/azul_card"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -154,7 +154,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginVertical="20dp"
-                android:backgroundTint="@color/azul_car"
+                android:backgroundTint="@color/azul_card"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -217,7 +217,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/azul_car"
+                        android:background="@color/azul_card"
                         android:orientation="vertical"
                         android:paddingHorizontal="10dp">
 
@@ -264,7 +264,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/azul_car"
+                        android:background="@color/azul_card"
                         android:orientation="vertical"
                         android:paddingHorizontal="10dp">
 
@@ -311,7 +311,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/azul_car"
+                        android:background="@color/azul_card"
                         android:orientation="vertical"
                         android:paddingHorizontal="10dp">
 
@@ -366,7 +366,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="@color/azul_car"
+                        android:background="@color/azul_card"
                         android:orientation="vertical"
                         android:paddingHorizontal="10dp">
 
