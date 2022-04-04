@@ -1,27 +1,26 @@
 package com.example.appclima.ui
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewpager2.widget.ViewPager2
 import com.example.appclima.R
 import com.example.appclima.adapter.ClimaDiaAdapter
 import com.example.appclima.adapter.ClimaHoraAdapter
+import com.example.appclima.adapter.SlideCidadesPagerAdapter
 import com.example.appclima.data.DataSource
-import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        carregarRecycleClimaPorHora()
-        carregarRecycleClimaPorDia()
-        carregarDadosCidade()
-        carregarMenu()
+        carregarSlideCidades()
+        //carregarRecycleClimaPorHora()
+        //carregarRecycleClimaPorDia()
+
     }
 
     private fun carregarRecycleClimaPorHora() {
@@ -36,47 +35,19 @@ class MainActivity : AppCompatActivity() {
         recyclerViewDia.adapter = adapterDia
     }
 
-    private fun carregarDadosCidade(){
-        val cidade = DataSource().cidadeParacatu
+    private fun carregarSlideCidades() {
+        val viewpager: ViewPager2 = findViewById(R.id.view_pager_activity)
+        val adapter = SlideCidadesPagerAdapter(this, DataSource().listaClimaCidadeFavorita)
+        viewpager.adapter = adapter
 
-        val textNomeCidade = findViewById<TextView>(R.id.tv_nome_cidade)
-        val textTemperaturaAtual = findViewById<TextView>(R.id.tv_temperatura_atual)
-        val textDescricao = findViewById<TextView>(R.id.tv_descricao)
-        val textMax = findViewById<TextView>(R.id.tv_max)
-        val textMin = findViewById<TextView>(R.id.tv_min)
-        val textUmidade = findViewById<TextView>(R.id.tv_umidade)
-        val textSensacao = findViewById<TextView>(R.id.tv_sensacao)
-        val textVisibilidade = findViewById<TextView>(R.id.tv_visibilidade)
-        val textChuva = findViewById<TextView>(R.id.tv_chuva)
+        val tabs: TabLayout = findViewById(R.id.into_tab_layout)
 
-
-        with(cidade){
-            textNomeCidade.text = nomeCidade
-            textTemperaturaAtual.text = resources.getString(R.string.text_temperatura_atual, temperaturaAtual.toString())
-            textDescricao.text = descricao
-            textMax.text = resources.getString(R.string.text_minima, temperaturaMinima.toString())
-            textMin.text = resources.getString(R.string.text_maxima, temperaturaMaxima.toString())
-            textUmidade.text = "$umidade%"
-            textSensacao.text = resources.getString(R.string.text_valor_sensacao, sensacao.toString())
-            textVisibilidade.text = resources.getString(R.string.text_valor_visibilidade, visibilidade.toString())
-            textChuva.text = resources.getString(R.string.text_valor_chuva_numero, chuvaUtlimasTresHoras.toString())
-        }
-
+        TabLayoutMediator(tabs, viewpager)
+        { tab, position ->}.attach()
     }
 
 
-    private fun carregarMenu(){
-        val menu = findViewById<BottomAppBar>(R.id.bottomAppBar)
-        menu.setOnMenuItemClickListener {
-            when(it.itemId){
-                R.id.procurar -> {
-                     val intent = Intent(this, ConfigurarCidadesActivity::class.java)
-                    startActivity(intent)
-                    true
-                }
-                else -> false
-            }
-        }
-    }
+
+
 
 }

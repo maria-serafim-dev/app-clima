@@ -36,6 +36,12 @@ class DataSource {
     val cidadeParacatu = ClimaCidade("Paracatu", 30, "Céu Limpo",
         30, 30, 47, 29, 0, 16 )
 
+    val cidadePatos= ClimaCidade("Patos", 20, "Chuva",
+        30, 30, 47, 29, 0, 16 )
 
-    val listaClimaCidadeFavorita = listOf<ClimaCidade>(cidadeParacatu, cidadeParacatu, cidadeParacatu, cidadeParacatu, cidadeParacatu, cidadeParacatu)
+
+    val cidadePatrocinio= ClimaCidade("Patrocínio", 18, "Chuva intensa",
+        30, 30, 47, 29, 0, 16 )
+
+    val listaClimaCidadeFavorita = listOf<ClimaCidade>(cidadeParacatu, cidadePatos, cidadePatrocinio)
 }
