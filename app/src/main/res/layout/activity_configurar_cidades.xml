@@ -16,7 +16,27 @@
         android:layout_marginStart="20dp"
         android:text="@string/text_titulo_tempo"
         android:textColor="@color/black"
-        style="@style/TextAppearance.MaterialComponents.Headline5"/>
+        style="@style/TextAppearance.MaterialComponents.Headline5" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tf_procurar_cidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="10dp"
+        android:hint="@string/hint_input_buscar_cidade"
+        app:endIconDrawable="@drawable/ic_lupa"
+        app:endIconMode="custom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_titulo_tempo">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_procurar_cidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_clima_cidades_favoritas"
@@ -25,11 +45,7 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_titulo_tempo"
-        tools:listitem="@layout/item_clima_cidade_favorita"
-        />
-
-
-
+        app:layout_constraintTop_toBottomOf="@id/tf_procurar_cidade"
+        tools:listitem="@layout/item_clima_cidade_favorita" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
