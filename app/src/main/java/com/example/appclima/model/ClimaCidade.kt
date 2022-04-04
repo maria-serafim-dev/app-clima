@@ -10,5 +10,4 @@ class ClimaCidade(
     val sensacao: Int,
     val chuvaUtlimasTresHoras: Int,
     val visibilidade: Int,
-) {
-}
+)

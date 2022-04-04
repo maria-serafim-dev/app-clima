@@ -1,7 +1,7 @@
 package com.example.appclima.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appclima.R
 import com.example.appclima.adapter.ClimaCidadeFavoritasAdapter
@@ -12,10 +12,10 @@ class ConfigurarCidadesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_configurar_cidades)
 
-        carregarRecycleClimaCidadesFavoritas()
+        carregarRecyclerClimaCidadesFavoritas()
     }
 
-    private fun carregarRecycleClimaCidadesFavoritas() {
+    private fun carregarRecyclerClimaCidadesFavoritas() {
         val recyclerView = findViewById<RecyclerView>(R.id.rv_clima_cidades_favoritas)
         val adapter = ClimaCidadeFavoritasAdapter(this, DataSource().listaClimaCidadeFavorita)
         recyclerView.adapter = adapter

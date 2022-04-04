@@ -13,12 +13,12 @@ import com.example.appclima.adapter.ClimaHoraAdapter
 import com.example.appclima.data.DataSource
 import com.example.appclima.model.ClimaCidade
 
-class ViewPageConteudoFragment(val cidade: ClimaCidade) : Fragment() {
+class ViewPageConteudoFragment(private val cidade: ClimaCidade) : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         carregarDadosCidade(view)
-        carregarRecycleClimaPorHora(view)
-        carregarRecycleClimaPorDia(view)
+        carregarRecyclerClimaPorHora(view)
+        carregarRecyclerClimaPorDia(view)
     }
 
     override fun onCreateView(
@@ -46,8 +46,8 @@ class ViewPageConteudoFragment(val cidade: ClimaCidade) : Fragment() {
             textDescricao.text = descricao
             textMax.text = resources.getString(R.string.text_minima, temperaturaMinima.toString())
             textMin.text = resources.getString(R.string.text_maxima, temperaturaMaxima.toString())
-            val texto_umidade = "$umidade%"
-            textUmidade.text = texto_umidade
+            val textoUmidade = "$umidade%"
+            textUmidade.text = textoUmidade
             textSensacao.text =
                 resources.getString(R.string.text_valor_sensacao, sensacao.toString())
             textVisibilidade.text =
@@ -59,13 +59,13 @@ class ViewPageConteudoFragment(val cidade: ClimaCidade) : Fragment() {
         }
     }
 
-    private fun carregarRecycleClimaPorHora(view: View) {
+    private fun carregarRecyclerClimaPorHora(view: View) {
         val recyclerViewHora = view.findViewById<RecyclerView>(R.id.rv_clima_por_hora)
         val adapterHora = ClimaHoraAdapter(view.context, DataSource().listaClimaHora)
         recyclerViewHora.adapter = adapterHora
     }
 
-    private fun carregarRecycleClimaPorDia(view: View) {
+    private fun carregarRecyclerClimaPorDia(view: View) {
         val recyclerViewDia = view.findViewById<RecyclerView>(R.id.rv_clima_por_dia)
         val adapterDia = ClimaDiaAdapter(view.context, DataSource().listaClimaDia)
         recyclerViewDia.adapter = adapterDia

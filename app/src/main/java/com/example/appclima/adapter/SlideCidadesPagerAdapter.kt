@@ -8,7 +8,7 @@ import com.example.appclima.model.ClimaCidade
 
 class SlideCidadesPagerAdapter(
     fragment: FragmentActivity,
-    val listaCidade: List<ClimaCidade>
+    private val listaCidade: List<ClimaCidade>
 ) : FragmentStateAdapter(fragment) {
 
     override fun getItemCount(): Int {
@@ -16,7 +16,6 @@ class SlideCidadesPagerAdapter(
     }
 
     override fun createFragment(position: Int): Fragment {
-        val fragment = ViewPageConteudoFragment(listaCidade.get(position))
-        return fragment
+        return ViewPageConteudoFragment(listaCidade[position])
     }
 }
