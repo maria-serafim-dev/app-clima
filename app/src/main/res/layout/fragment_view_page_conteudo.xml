@@ -28,12 +28,13 @@
                 android:layout_height="match_parent"
                 android:alpha="0.5"
                 android:scaleType="centerCrop"
-                android:src="@drawable/clouds_g583db306d_1920"
+                android:src="@drawable/img_nuvens"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintVertical_bias="0.0"
+                android:contentDescription="@string/dc_img_fundo"/>
 
             <TextView
                 android:id="@+id/tv_nome_cidade"
@@ -379,7 +380,7 @@
                             android:gravity="center_vertical"
                             android:text="@string/text_titulo_visibilidade"
                             android:textColor="@color/azul"
-                            app:drawableStartCompat="@drawable/ic_visibilidade" />
+                            app:drawableStartCompat="@drawable/ic_olho" />
 
                         <TextView
                             android:id="@+id/tv_visibilidade"

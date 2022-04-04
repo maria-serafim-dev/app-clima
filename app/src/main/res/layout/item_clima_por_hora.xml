@@ -18,7 +18,8 @@
         android:id="@+id/icone_tempo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_sun" />
+        android:src="@drawable/ic_sol"
+        android:contentDescription="@string/dc_icone_tempo"/>
 
     <TextView
         android:id="@+id/tv_temperatura_hora"

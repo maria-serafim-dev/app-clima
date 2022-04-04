@@ -39,6 +39,7 @@
         app:layout_constraintBottom_toBottomOf="@id/into_tab_layout"
         app:layout_constraintHorizontal_bias="1"
         android:layout_marginEnd="20dp"
-        android:src="@drawable/ic_procurar"/>
+        android:src="@drawable/ic_lupa"
+        android:contentDescription="@string/dc_icon_lupa"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
