@@ -35,6 +35,7 @@
     <string name="dc_icone_tempo">Ícone representando o sol amarelo</string>
     <string name="dc_img_fundo">Imagem com o céu azul com várias nuvens brancas</string>
     <string name="dc_icon_lupa">Imagem de uma lupa na cor branca</string>
+    <string name="hint_input_buscar_cidade">Busque uma cidade</string>
 
 
 </resources>
