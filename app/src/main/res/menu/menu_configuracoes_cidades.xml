@@ -5,7 +5,8 @@
         android:id="@+id/teste"
         android:icon="@drawable/ic_menu"
         android:title="@string/text_menu"
-        app:showAsAction="ifRoom">
+        app:showAsAction="ifRoom" >
+
         <menu>
             <item
                 android:id="@+id/menu_editar_lista"
@@ -24,8 +25,7 @@
                     android:id="@+id/menu_celsius"
                     android:icon="@drawable/ic_celsius"
                     android:title="@string/text_menu_celsius"
-                    app:showAsAction="never"
-                    android:checked="true"/>
+                    app:showAsAction="never" />
 
                 <item
                     android:id="@+id/menu_fahrenheit"
