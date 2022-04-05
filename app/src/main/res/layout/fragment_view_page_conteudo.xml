@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/azul"
-    tools:context=".fragment.ViewPageConteudoFragment">
+    tools:context=".fragment.ClimaCidadeFragment">
 
 
     <androidx.core.widget.NestedScrollView
@@ -27,14 +27,27 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:alpha="0.5"
+                android:contentDescription="@string/dc_img_fundo"
                 android:scaleType="centerCrop"
                 android:src="@drawable/img_nuvens"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                android:contentDescription="@string/dc_img_fundo"/>
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/btn_cancelar"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_btn_cancelar"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@id/btn_adicionar"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_nome_cidade"
@@ -47,6 +60,20 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_cancelar"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <Button
+                android:id="@+id/btn_adicionar"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_btn_adicionar"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/tv_nome_cidade"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/btn_cancelar"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.0" />
 
@@ -144,7 +171,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         app:layoutManager="LinearLayoutManager"
-                        tools:listitem="@layout/item_clima_por_hora"/>
+                        tools:listitem="@layout/item_clima_por_hora" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>

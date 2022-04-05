@@ -3,7 +3,7 @@ package com.example.appclima.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.appclima.fragment.ViewPageConteudoFragment
+import com.example.appclima.fragment.ClimaCidadeFragment
 import com.example.appclima.model.ClimaCidade
 
 class SlideCidadesPagerAdapter(
@@ -16,6 +16,6 @@ class SlideCidadesPagerAdapter(
     }
 
     override fun createFragment(position: Int): Fragment {
-        return ViewPageConteudoFragment(listaCidade[position])
+        return ClimaCidadeFragment(listaCidade[position])
     }
 }

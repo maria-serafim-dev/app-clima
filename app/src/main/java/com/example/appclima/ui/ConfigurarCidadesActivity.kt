@@ -1,6 +1,8 @@
 package com.example.appclima.ui
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appclima.R
@@ -13,6 +15,15 @@ class ConfigurarCidadesActivity : AppCompatActivity() {
         setContentView(R.layout.activity_configurar_cidades)
 
         carregarRecyclerClimaCidadesFavoritas()
+        ouvintePesquisa()
+    }
+
+    private fun ouvintePesquisa() {
+        val textFieldProcurar: TextView = findViewById(R.id.tv_titulo_tempo)
+        textFieldProcurar.setOnClickListener {
+            val modalBottomSheet = ModalBottomSheet(DataSource().listaClimaCidadeFavorita[0])
+            modalBottomSheet.show(supportFragmentManager, ModalBottomSheet.TAG)
+        }
     }
 
     private fun carregarRecyclerClimaCidadesFavoritas() {

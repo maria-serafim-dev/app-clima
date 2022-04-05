@@ -13,7 +13,7 @@ import com.example.appclima.adapter.ClimaHoraAdapter
 import com.example.appclima.data.DataSource
 import com.example.appclima.model.ClimaCidade
 
-class ViewPageConteudoFragment(private val cidade: ClimaCidade) : Fragment() {
+class ClimaCidadeFragment(private val cidade: ClimaCidade) : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         carregarDadosCidade(view)
