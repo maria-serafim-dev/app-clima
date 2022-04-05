@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
     android:orientation="vertical">
 
     <LinearLayout
@@ -15,15 +14,15 @@
         <TextView
             android:id="@+id/tv_dia_semana"
             style="@style/TextAppearance.MaterialComponents.Body1"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="1.5"
             android:text="@string/text_hoje"
             android:textColor="@color/white" />
 
         <ImageView
             android:id="@+id/icone_tempo_por_dia"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:src="@drawable/ic_sol"
@@ -32,9 +31,9 @@
         <TextView
             android:id="@+id/tv_min_por_dia"
             style="@style/TextAppearance.MaterialComponents.Body1"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0"
+            android:layout_weight="1"
             android:gravity="end"
             android:text="@string/text_temperatura_min_por_dia"
             android:textColor="@color/white" />
@@ -43,7 +42,7 @@
             android:id="@+id/slider_por_dia"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
+            android:layout_weight="1.5"
             android:enabled="false"
             android:stepSize="10.0"
             android:value="50"
@@ -57,9 +56,9 @@
         <TextView
             android:id="@+id/tv_max_por_dia"
             style="@style/TextAppearance.MaterialComponents.Body1"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0"
+            android:layout_weight="1"
             android:text="@string/text_temperatura_max_por_dia"
             android:textColor="@color/white" />
 
