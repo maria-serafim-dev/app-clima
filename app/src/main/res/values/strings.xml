@@ -38,6 +38,11 @@
     <string name="hint_input_buscar_cidade">Busque uma cidade</string>
     <string name="text_btn_cancelar">Cancelar</string>
     <string name="text_btn_adicionar">Adicionar</string>
+    <string name="text_menu">Menu</string>
+    <string name="text_menu_editar_lista">Editar Lista</string>
+    <string name="text_menu_notificacoes">Notificações</string>
+    <string name="text_menu_celsius">Celsius</string>
+    <string name="text_menu_fahrenheit">Fahrenheit</string>
 
 
 </resources>

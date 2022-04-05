@@ -3,11 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/drawable-anydpi/ic_celsius.xml" value="0.1935" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/drawable/default_pager_dot.xml" value="0.1935" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/drawable/ic_calendario.xml" value="0.343" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/drawable/ic_gota.xml" value="0.2405" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/drawable/ic_lapis_edicao.xml" value="0.1935" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/drawable/ic_launcher_background.xml" value="0.343" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/drawable/ic_lupa.xml" value="0.104" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/drawable/ic_menu.xml" value="0.3635" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/drawable/ic_notificacao.xml" value="0.1935" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/drawable/ic_nuvem.xml" value="0.104" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/drawable/ic_olho.xml" value="0.104" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/drawable/ic_sol.xml" value="0.1865" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/drawable/ic_sun.xml" value="0.1935" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/drawable/ic_termometro.xml" value="0.2405" />
@@ -23,7 +29,11 @@
         <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/layout/item_clima_cidade_favorita.xml" value="0.5649794801641587" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/layout/item_clima_por_dia.xml" value="0.33" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/layout/item_clima_por_hora.xml" value="0.33" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/layout/item_menu.xml" value="0.33" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/menu/bottom_app_bar.xml" value="0.2975630611372381" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/menu/menu_configuracoes_cidades.xml" value="0.2967079948696024" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1935" />
+        <entry key="..\:/Users/Maria/AndroidStudioProjects/AppClima/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1935" />
       </map>
     </option>
   </component>
