@@ -43,6 +43,8 @@
     <string name="text_menu_notificacoes">Notificações</string>
     <string name="text_menu_celsius">Celsius</string>
     <string name="text_menu_fahrenheit">Fahrenheit</string>
+    <string name="dc_icon_lixeira">Imagem de uma lixeira representando a possibilidade de exclusão</string>
+    <string name="dc_icon_reordenacao">Icone de quatro riscos representando a possibilidade de reordenação das cidades</string>
 
 
 </resources>
