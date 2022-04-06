@@ -1,16 +1,21 @@
 package com.example.appclima.ui
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.MenuCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appclima.R
 import com.example.appclima.adapter.ClimaCidadeFavoritasAdapter
 import com.example.appclima.data.DataSource
-import com.google.android.material.appbar.MaterialToolbar
 
 
 class ConfigurarCidadesActivity : AppCompatActivity() {
+
     private lateinit var adapter: ClimaCidadeFavoritasAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,38 +24,51 @@ class ConfigurarCidadesActivity : AppCompatActivity() {
 
         carregarRecyclerClimaCidadesFavoritas()
         ouvintePesquisa()
-        ouvinteMenu()
+
+        setSupportActionBar(findViewById(R.id.topAppBar))
+        supportActionBar?.title = ""
     }
 
-    private fun ouvinteMenu() {
-        val menu: MaterialToolbar = findViewById(R.id.topAppBar)
-
-        menu.setOnMenuItemClickListener {
-            when(it.itemId){
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+       return when(item.itemId){
                 R.id.menu_editar_lista->{
                     adapter.visiliby = true
                     adapter.notifyDataSetChanged()
+                    configurarBotaoSalvar()
                     true
                 }
                 R.id.menu_notificacoes->{
-                    adapter.visiliby = false
-                    adapter.notifyDataSetChanged()
                     true
                 }
                 R.id.menu_fahrenheit -> {
-                    it.isChecked = true
+                    item.isChecked = true
                     true
                 }
-                R.id.menu_celsius-> {
-                    it.isChecked = true
+                R.id.menu_celsius -> {
+                    item.isChecked = true
                     true
                 }
                 else -> false
             }
 
+    }
+
+    private fun configurarBotaoSalvar() {
+        val botaoSalvar: Button = findViewById(R.id.btn_salvar)
+        botaoSalvar.visibility = View.VISIBLE
+        botaoSalvar.setOnClickListener {
+            botaoSalvar.visibility = View.GONE
+            adapter.visiliby = false
+            adapter.notifyDataSetChanged()
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_configuracoes_cidades, menu)
+        menu.findItem(R.id.menu_celsius).isChecked = true
+        MenuCompat.setGroupDividerEnabled(menu, true)
+        return true
+    }
 
     private fun ouvintePesquisa() {
         val textFieldProcurar: TextView = findViewById(R.id.tv_titulo_tempo)

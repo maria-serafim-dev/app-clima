@@ -2,12 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/teste"
+        android:id="@+id/menu_principal"
         android:icon="@drawable/ic_menu"
         android:title="@string/text_menu"
         app:showAsAction="ifRoom" >
 
         <menu>
+            <group android:id="@+id/menu_grupo_configuracoes">
             <item
                 android:id="@+id/menu_editar_lista"
                 android:icon="@drawable/ic_lapis_edicao"
@@ -18,7 +19,7 @@
                 android:icon="@drawable/ic_notificacao"
                 android:title="@string/text_menu_notificacoes"
                 app:showAsAction="never" />
-
+            </group>
             <group android:id="@+id/menu_unidade_medidas"
                 android:checkableBehavior="single">
                 <item

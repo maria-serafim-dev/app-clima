@@ -57,15 +57,29 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <Button
+        android:id="@+id/btn_salvar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_btn_salvar"
+        android:layout_marginTop="10dp"
+        style="@style/Widget.MaterialComponents.Button"
+        app:layout_constraintEnd_toEndOf="@id/tf_procurar_cidade"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tf_procurar_cidade"
+        app:layout_constraintHorizontal_bias="1.0"
+        android:visibility="gone"
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_clima_cidades_favoritas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tf_procurar_cidade"
+        app:layout_constraintTop_toBottomOf="@id/btn_salvar"
         tools:listitem="@layout/item_clima_cidade_favorita" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
