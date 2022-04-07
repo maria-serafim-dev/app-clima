@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appclima.R
 import com.example.appclima.adapter.ClimaDiaAdapter
@@ -63,12 +64,16 @@ class ClimaCidadeFragment(private val cidade: ClimaCidade) : Fragment() {
         val recyclerViewHora = view.findViewById<RecyclerView>(R.id.rv_clima_por_hora)
         val adapterHora = ClimaHoraAdapter(view.context, DataSource().listaClimaHora)
         recyclerViewHora.adapter = adapterHora
+
     }
 
     private fun carregarRecyclerClimaPorDia(view: View) {
         val recyclerViewDia = view.findViewById<RecyclerView>(R.id.rv_clima_por_dia)
         val adapterDia = ClimaDiaAdapter(view.context, DataSource().listaClimaDia)
         recyclerViewDia.adapter = adapterDia
+        recyclerViewDia.addItemDecoration(
+            DividerItemDecoration(view.context, DividerItemDecoration.VERTICAL)
+        )
     }
 
 }
