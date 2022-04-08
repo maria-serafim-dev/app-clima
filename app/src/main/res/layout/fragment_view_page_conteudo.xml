@@ -224,43 +224,37 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-
-            <GridLayout
-                android:id="@+id/grid_informacoes"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginVertical="20dp"
-                android:columnCount="2"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_umidade"
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toStartOf="@id/card_sensacao"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/card_dias"
-                app:layout_constraintVertical_bias="0.0">
+                app:layout_constraintTop_toBottomOf="@id/card_dias">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="160dp"
-                    android:layout_height="160dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/azul_card"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="10dp">
 
-                    <LinearLayout
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Caption"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/azul_card"
-                        android:orientation="vertical"
-                        android:paddingHorizontal="10dp">
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="5dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/text_titulo_umidade"
+                        android:textColor="@color/azul"
+                        app:drawableStartCompat="@drawable/ic_vento" />
 
-                        <TextView
-                            style="@style/TextAppearance.MaterialComponents.Caption"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:drawablePadding="5dp"
-                            android:gravity="center_vertical"
-                            android:text="@string/text_titulo_umidade"
-                            android:textColor="@color/azul"
-                            app:drawableStartCompat="@drawable/ic_vento" />
-
-                        <TextView
+                    <TextView
                             android:id="@+id/tv_umidade"
                             style="@style/TextAppearance.MaterialComponents.Headline5"
                             android:layout_width="match_parent"
@@ -281,33 +275,38 @@
                             android:text="@string/text_descricao_umidade"
                             android:textColor="@color/white"
                             android:textSize="11sp" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_gravity="end">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_sensacao"
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/card_umidade"
+                app:layout_constraintTop_toTopOf="@id/card_umidade">
 
-                    <LinearLayout
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/azul_card"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="10dp">
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Caption"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/azul_card"
-                        android:orientation="vertical"
-                        android:paddingHorizontal="10dp">
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="5dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/text_titulo_sensacao"
+                        android:textColor="@color/azul"
+                        app:drawableStartCompat="@drawable/ic_termometro" />
 
-                        <TextView
-                            style="@style/TextAppearance.MaterialComponents.Caption"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:drawablePadding="5dp"
-                            android:gravity="center_vertical"
-                            android:text="@string/text_titulo_sensacao"
-                            android:textColor="@color/azul"
-                            app:drawableStartCompat="@drawable/ic_termometro" />
-
-                        <TextView
+                    <TextView
                             android:id="@+id/tv_sensacao"
                             style="@style/TextAppearance.MaterialComponents.Headline5"
                             android:layout_width="match_parent"
@@ -331,20 +330,27 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_marginTop="20dp">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_chuva"
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toStartOf="@id/card_visibilidade"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_umidade">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/azul_card"
-                        android:orientation="vertical"
-                        android:paddingHorizontal="10dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/azul_card"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="10dp">
 
-                        <TextView
-                            style="@style/TextAppearance.MaterialComponents.Caption"
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Caption"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -385,21 +391,25 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="20dp">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_visibilidade"
+                android:layout_width="0dp"
+                android:layout_height="160dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/card_chuva"
+                app:layout_constraintTop_toTopOf="@id/card_chuva">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/azul_card"
-                        android:orientation="vertical"
-                        android:paddingHorizontal="10dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/azul_card"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="10dp">
 
-                        <TextView
-                            style="@style/TextAppearance.MaterialComponents.Caption"
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Caption"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -433,7 +443,7 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-            </GridLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
