@@ -1,41 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.ConfigurarCidadesActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_configurar_cidades"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        >
+        android:layout_height="wrap_content">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/topAppBar"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:menu="@menu/menu_configuracoes_cidades"
-            style="@style/Widget.MaterialComponents.Toolbar.Primary"
-            />
+            app:menu="@menu/menu_configuracoes_cidades" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
-
     <TextView
         android:id="@+id/tv_titulo_tempo"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/app_bar_configurar_cidades"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="20dp"
         android:text="@string/text_titulo_tempo"
-        android:textColor="@color/black"
-        style="@style/TextAppearance.MaterialComponents.Headline5" />
+        android:textColor="@color/black" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tf_procurar_cidade"
@@ -45,31 +39,25 @@
         android:layout_marginTop="10dp"
         android:hint="@string/hint_input_buscar_cidade"
         app:endIconDrawable="@drawable/ic_lupa"
-        app:endIconMode="custom"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_titulo_tempo">
+        app:endIconMode="custom">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/edit_procurar_cidade"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_salvar"
+        style="@style/Widget.MaterialComponents.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/text_btn_salvar"
         android:layout_marginTop="10dp"
-        style="@style/Widget.MaterialComponents.Button"
-        app:layout_constraintEnd_toEndOf="@id/tf_procurar_cidade"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tf_procurar_cidade"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_marginEnd="20dp"
+        android:text="@string/text_btn_salvar"
         android:visibility="gone"
-        />
+        android:layout_gravity="end"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_clima_cidades_favoritas"
@@ -77,9 +65,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_salvar"
         tools:listitem="@layout/item_clima_cidade_favorita" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
