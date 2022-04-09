@@ -13,6 +13,9 @@ import com.example.appclima.adapter.ClimaHoraAdapter
 import com.example.appclima.data.DataSource
 import com.example.appclima.model.ClimaCidade
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.google.android.material.imageview.ShapeableImageView
+import com.google.android.material.shape.CornerFamily
+
 
 class ModalBottomSheet(private val cidade: ClimaCidade): BottomSheetDialogFragment() {
 
@@ -44,6 +47,9 @@ class ModalBottomSheet(private val cidade: ClimaCidade): BottomSheetDialogFragme
         val textVisibilidade: TextView = view.findViewById(R.id.tv_visibilidade)
         val buttonCancelar: Button = view.findViewById(R.id.btn_cancelar)
         val buttonAdicionar: Button = view.findViewById(R.id.btn_adicionar)
+        val imgBackground: ShapeableImageView = view.findViewById(R.id.img_background)
+
+        configurarImagemBackground(imgBackground)
 
         buttonAdicionar.visibility = View.VISIBLE
         buttonCancelar.visibility = View.VISIBLE
@@ -68,6 +74,14 @@ class ModalBottomSheet(private val cidade: ClimaCidade): BottomSheetDialogFragme
         }
     }
 
+    private fun configurarImagemBackground(imgBackground: ShapeableImageView) {
+        val radius = resources.getDimension(R.dimen.shape_radius_bottom_sheet)
+        imgBackground.shapeAppearanceModel = imgBackground.shapeAppearanceModel
+            .toBuilder()
+            .setTopRightCorner(CornerFamily.ROUNDED, radius)
+            .setTopLeftCorner(CornerFamily.ROUNDED, radius)
+            .build()
+    }
 
     private fun carregarRecyclerClimaPorHora(view: View) {
         val recyclerViewHora = view.findViewById<RecyclerView>(R.id.rv_clima_por_hora)
