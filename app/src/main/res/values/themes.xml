@@ -18,7 +18,6 @@
 
     <style name="Widget.App.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
-
     </style>
 
     <style name="ThemeOverlay.App.TextInputLayout" parent="">
@@ -27,6 +26,12 @@
         </item>
         <item name="colorSecondary">@color/azul_card</item>
     </style>
+
+    <style name="Widget.App.TextInputLayout.Landscape" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.TextInputLayout</item>
+        <item name="android:height">200dp</item>
+    </style>
+
 
     <style name="BottomSheetDialog" parent="ThemeOverlay.MaterialComponents.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
@@ -44,5 +49,8 @@
         <item name="cornerSizeTopLeft">20dp</item>
 
     </style>
+
+    <style name="TextAppearance.Headline6" parent="TextAppearance.MaterialComponents.Headline6"/>
+
 
 </resources>

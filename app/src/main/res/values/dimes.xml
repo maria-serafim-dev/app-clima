@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="shape_radius_bottom_sheet">20dp</dimen>
+    <dimen name="text_landscape">10dp</dimen>
 </resources>
