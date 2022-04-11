@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AppClima</string>
+    <string name="app_name">Clima</string>
     <string name="text_nome_cidade">Paracatu</string>
     <string name="text_temperatura_atual">%sºC</string>
     <string name="text_temperatura_por_hora">%sº</string>

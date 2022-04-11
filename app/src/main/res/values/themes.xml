@@ -52,5 +52,12 @@
 
     <style name="TextAppearance.Headline6" parent="TextAppearance.MaterialComponents.Headline6"/>
 
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/azul_card</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_nuvem_splash_screen</item>
+        <item name="windowSplashScreenAnimationDuration">300</item>
+        <item name="postSplashScreenTheme">@style/Theme.AppClima</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
 
 </resources>
