@@ -85,4 +85,10 @@ class ModalBottomSheet(private val cidade: ClimaCidade): BottomSheetDialogFragme
             DividerItemDecoration(view.context, DividerItemDecoration.VERTICAL)
         )
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
 }

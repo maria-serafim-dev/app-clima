@@ -4,12 +4,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.appclima.R
+import com.example.appclima.databinding.ItemClimaCidadeFavoritaBinding
 import com.example.appclima.model.ClimaCidade
 
 class ClimaCidadeFavoritasAdapter (private val context: Context,
@@ -18,51 +16,53 @@ class ClimaCidadeFavoritasAdapter (private val context: Context,
 
     var visiliby: Boolean? = null
 
-    class ClimaCidadeFavoritasHolder(view: View): RecyclerView.ViewHolder(view) {
-        val textNomeCidade: TextView = view.findViewById(R.id.tv_nome_cidade)
-        val textTemperaturaAtual: TextView  = view.findViewById(R.id.tv_temperatura_atual)
-        val textDescricao: TextView  = view.findViewById(R.id.tv_descricao)
-        val textMax: TextView  = view.findViewById(R.id.tv_max)
-        val textMin: TextView  = view.findViewById(R.id.tv_min)
-        val imgRemocao: ImageView = view.findViewById(R.id.img_remocao)
-        val imgMudarPrioridade: ImageView = view.findViewById(R.id.img_mudar_prioridade)
-        var cardCidades: CardView = view.findViewById(R.id.card_cidade)
-        var layout = cardCidades.layoutParams as LinearLayout.LayoutParams
+    class ClimaCidadeFavoritasHolder(val binding: ItemClimaCidadeFavoritaBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        var layout = binding.cardCidade.layoutParams as LinearLayout.LayoutParams
         val marginStart = layout.marginStart
         val marginEnd = layout.marginEnd
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClimaCidadeFavoritasHolder {
-        val adapterLayout = LayoutInflater.from(context).inflate(R.layout.item_clima_cidade_favorita, parent, false)
-        return ClimaCidadeFavoritasHolder(adapterLayout)
+        val binding = ItemClimaCidadeFavoritaBinding.inflate(LayoutInflater.from(context), parent, false)
+        return ClimaCidadeFavoritasHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ClimaCidadeFavoritasHolder, position: Int) {
         val item = listClimaCidade[position]
 
         with(holder){
-            with(item){
-                textNomeCidade.text = nomeCidade
-                textTemperaturaAtual.text = context.resources.getString(R.string.text_temperatura_atual, temperaturaAtual.toString())
+            with(item) {
+                binding.tvNomeCidade.text = nomeCidade
+                binding.tvTemperaturaAtual.text = context.resources.getString(
+                    R.string.text_temperatura_atual,
+                    temperaturaAtual.toString()
+                )
 
-                if (visiliby == null){
-                    textDescricao.text = descricao
-                    textMax.text = context.resources.getString(R.string.text_minima, temperaturaMinima.toString())
-                    textMin.text = context.resources.getString(R.string.text_maxima, temperaturaMaxima.toString())
-                } else if (visiliby == true){
-                    imgRemocao.visibility = View.VISIBLE
-                    imgMudarPrioridade.visibility = View.VISIBLE
-                    textDescricao.visibility = View.GONE
-                    textMax.visibility = View.GONE
-                    textMin.visibility = View.GONE
+                if (visiliby == null) {
+                    binding.tvDescricao.text = descricao
+                    binding.tvMax.text = context.resources.getString(
+                        R.string.text_minima,
+                        temperaturaMinima.toString()
+                    )
+                    binding.tvMin.text = context.resources.getString(
+                        R.string.text_maxima,
+                        temperaturaMaxima.toString()
+                    )
+                } else if (visiliby == true) {
+                    binding.imgRemocao.visibility = View.VISIBLE
+                    binding.imgMudarPrioridade.visibility = View.VISIBLE
+                    binding.tvDescricao.visibility = View.GONE
+                    binding.tvMax.visibility = View.GONE
+                    binding.tvMin.visibility = View.GONE
                     layout.marginStart = 0
                     layout.marginEnd = 0
-                }else{
-                    imgRemocao.visibility = View.GONE
-                    imgMudarPrioridade.visibility = View.GONE
-                    textDescricao.visibility = View.VISIBLE
-                    textMax.visibility = View.VISIBLE
-                    textMin.visibility = View.VISIBLE
+                }else {
+                    binding.imgRemocao.visibility = View.GONE
+                    binding.imgMudarPrioridade.visibility = View.GONE
+                    binding.tvDescricao.visibility = View.VISIBLE
+                    binding.tvMax.visibility = View.VISIBLE
+                    binding.tvMin.visibility = View.VISIBLE
                     layout.marginStart = marginStart
                     layout.marginEnd = marginEnd
                 }
