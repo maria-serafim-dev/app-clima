@@ -4,30 +4,31 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.MenuCompat
 import androidx.core.widget.TextViewCompat
-import androidx.recyclerview.widget.RecyclerView
 import com.example.appclima.R
 import com.example.appclima.adapter.ClimaCidadeFavoritasAdapter
 import com.example.appclima.data.DataSource
+import com.example.appclima.databinding.ActivityConfigurarCidadesBinding
 
 
 class ConfigurarCidadesActivity : AppCompatActivity() {
 
     private lateinit var adapter: ClimaCidadeFavoritasAdapter
+    private lateinit var binding: ActivityConfigurarCidadesBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_configurar_cidades)
+        binding = ActivityConfigurarCidadesBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         carregarRecyclerClimaCidadesFavoritas()
         ouvintePesquisa()
 
-        setSupportActionBar(findViewById(R.id.topAppBar))
+        setSupportActionBar(binding.topAppBar)
         supportActionBar?.title = ""
 
         carregarConfiguracoesModoLandscape()
@@ -37,13 +38,9 @@ class ConfigurarCidadesActivity : AppCompatActivity() {
     private fun carregarConfiguracoesModoLandscape() {
         val orientacao = resources.configuration.orientation
         if(orientacao == 2 ){
-            val textFieldProcurar: TextView = findViewById(R.id.tv_titulo_tempo)
-            TextViewCompat.setTextAppearance(textFieldProcurar, R.style.TextAppearance_Headline6)
-
-            val lessButtonParams: LinearLayout.LayoutParams = textFieldProcurar.layoutParams as LinearLayout.LayoutParams
+            TextViewCompat.setTextAppearance(binding.tvTituloTempo, R.style.TextAppearance_Headline6)
+            val lessButtonParams: LinearLayout.LayoutParams = binding.tvTituloTempo.layoutParams as LinearLayout.LayoutParams
             lessButtonParams.topMargin = resources.getDimension(R.dimen.text_landscape).toInt()
-
-
         }
     }
 
@@ -72,10 +69,9 @@ class ConfigurarCidadesActivity : AppCompatActivity() {
     }
 
     private fun configurarBotaoSalvar() {
-        val botaoSalvar: Button = findViewById(R.id.btn_salvar)
-        botaoSalvar.visibility = View.VISIBLE
-        botaoSalvar.setOnClickListener {
-            botaoSalvar.visibility = View.GONE
+        binding.btnSalvar.visibility = View.VISIBLE
+        binding.btnSalvar.setOnClickListener {
+            binding.btnSalvar.visibility = View.GONE
             adapter.visiliby = false
             adapter.notifyDataSetChanged()
         }
@@ -97,9 +93,7 @@ class ConfigurarCidadesActivity : AppCompatActivity() {
     }
 
     private fun carregarRecyclerClimaCidadesFavoritas() {
-        val recyclerView = findViewById<RecyclerView>(R.id.rv_clima_cidades_favoritas)
-        adapter = ClimaCidadeFavoritasAdapter(this, DataSource().listaClimaCidadeFavorita)
-
-        recyclerView.adapter = adapter
+       adapter = ClimaCidadeFavoritasAdapter(this, DataSource().listaClimaCidadeFavorita)
+       binding.rvClimaCidadesFavoritas.adapter = adapter
     }
 }
