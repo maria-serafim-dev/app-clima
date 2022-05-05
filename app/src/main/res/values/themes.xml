@@ -21,6 +21,7 @@
     </style>
 
     <style name="ThemeOverlay.App.TextInputLayout" parent="">
+        <item name="colorPrimary">@color/vermelho</item>
         <item name="colorOnSurface">@color/azul_card</item>
         <item name="editTextStyle">@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox
         </item>

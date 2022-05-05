@@ -4,11 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.example.appclima.R
 import com.example.appclima.adapter.SlideCidadesPagerAdapter
 import com.example.appclima.data.DataSource
 import com.example.appclima.databinding.ActivityMainBinding
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
 class MainActivity : AppCompatActivity() {
@@ -29,10 +27,8 @@ class MainActivity : AppCompatActivity() {
         val adapter = SlideCidadesPagerAdapter(this, DataSource().listaClimaCidadeFavorita)
         binding.viewPagerActivity.adapter = adapter
 
-        val tabs: TabLayout = findViewById(R.id.into_tab_layout)
-
-        TabLayoutMediator(tabs, binding.viewPagerActivity)
-        { tab, position ->}.attach()
+        TabLayoutMediator(binding.intoTabLayout, binding.viewPagerActivity)
+        { _, _ ->}.attach()
     }
 
     private fun ouvinteProcurarCidade() {
